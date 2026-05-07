@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome — Surf & Golf School</title>
+  <meta name="description" content="Welcome! You've scanned our QR code. Book a lesson, browse our shop, or claim your exclusive first-timer discount." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="qr-landing.css" />
+</head>
+<body class="qr-body">
+
+  <!-- ANIMATED BACKGROUND -->
+  <div class="qr-bg" aria-hidden="true">
+    <div class="wave w1"></div>
+    <div class="wave w2"></div>
+    <div class="wave w3"></div>
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+  </div>
+
+  <!-- MAIN CARD -->
+  <main class="qr-main" id="qr-main">
+
+    <!-- Logo -->
+    <header class="qr-header">
+      <span class="logo-qr">Surf<span class="logo-green">&Golf</span></span>
+      <p class="logo-sub">School & Shop</p>
+    </header>
+
+    <!-- Welcome -->
+    <section class="qr-welcome">
+      <div class="qr-icon-wrap" aria-hidden="true">
+        <span class="qr-icon">🌊⛳</span>
+      </div>
+      <h1>You've Found Us!</h1>
+      <p class="qr-tagline">Welcome to the home of surf and golf in one place. Whether you're here to shred waves or lower your handicap — we've got you.</p>
+    </section>
+
+    <!-- Exclusive Offer -->
+    <section class="offer-card" id="exclusive-offer">
+      <div class="offer-badge">🎁 QR Exclusive</div>
+      <h2 class="offer-title">10% Off Your First Lesson</h2>
+      <p class="offer-desc">Show this screen at reception or enter the code online. Valid for new students only.</p>
+      <div class="promo-code-box" id="promo-code-box">
+        <span class="promo-code" id="promo-code">WAVE&GOLF10</span>
+        <button class="copy-btn" id="copy-btn" aria-label="Copy promo code">Copy</button>
+      </div>
+      <p class="offer-expire">⏰ Offer valid until end of season</p>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links" id="quick-links">
+      <h3 class="links-title">What would you like to do?</h3>
+      <div class="links-grid">
+
+        <a href="#" class="link-card" id="link-book-surf">
+          <span class="link-icon">🏄</span>
+          <div>
+            <strong>Book a Surf Lesson</strong>
+            <p>From beginners to advanced</p>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="#" class="link-card" id="link-book-golf">
+          <span class="link-icon">⛳</span>
+          <div>
+            <strong>Book a Golf Lesson</strong>
+            <p>1-on-1 and group sessions</p>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="products.html" class="link-card" id="link-shop">
+          <span class="link-icon">🛍️</span>
+          <div>
+            <strong>Visit Our Shop</strong>
+            <p>Surf & golf gear & apparel</p>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="#" class="link-card" id="link-location">
+          <span class="link-icon">📍</span>
+          <div>
+            <strong>Find Us</strong>
+            <p>Get directions to the school</p>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="#" class="link-card" id="link-social">
+          <span class="link-icon">📸</span>
+          <div>
+            <strong>Follow Us</strong>
+            <p>Instagram & TikTok</p>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+        <a href="#" class="link-card" id="link-contact">
+          <span class="link-icon">📞</span>
+          <div>
+            <strong>Contact Us</strong>
+            <p>Call, WhatsApp, or email</p>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- School Info Strip -->
+    <section class="info-strip" id="info-strip">
+      <div class="info-item">
+        <span class="info-icon">🕗</span>
+        <div>
+          <strong>Open Daily</strong>
+          <p>8am – 7pm</p>
+        </div>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-item">
+        <span class="info-icon">📍</span>
+        <div>
+          <strong>Location</strong>
+          <p>Beach Road, Surf Town</p>
+        </div>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-item">
+        <span class="info-icon">📞</span>
+        <div>
+          <strong>Call Us</strong>
+          <p>+1 234 567 890</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="qr-cta">
+      <a href="#" class="btn-primary" id="cta-book-now">Book a Lesson Now →</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="qr-footer">
+      <p>© 2026 Surf & Golf School · <a href="#">Privacy Policy</a> · <a href="products.html">Shop</a></p>
+    </footer>
+
+  </main>
+
+  <!-- Copy Toast -->
+  <div class="toast" id="copy-toast" role="alert" aria-live="polite">
+    <span class="toast-icon">📋</span>
+    <span class="toast-msg">Code copied to clipboard!</span>
+  </div>
+
+  <script src="qr-landing.js"></script>
+</body>
+</html>
