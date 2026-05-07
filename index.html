@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Royal Jelly 27 — L'Élixir | Mauro & Co 3</title>
+  <meta name="description" content="Royal Jelly 27 par Mauro & Co 3 — 22% de Gelée Royale pure. L'élixir des anciennes civilisations. Produit du Maroc."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --cream:#fdf8f0;
+      --cream2:#f5edd8;
+      --gold:#b8892a;
+      --gold-light:#d4a843;
+      --gold-dark:#7a5a18;
+      --honey:#e8a020;
+      --text:#1a1208;
+      --text-mid:#4a3a1a;
+      --text-light:#8a7050;
+      --white:#ffffff;
+      --border:rgba(184,137,42,0.25);
+      --shadow:rgba(184,137,42,0.15);
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--cream);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+    /* HONEYCOMB BG PATTERN */
+    .hc-pattern{
+      position:fixed;inset:0;z-index:0;pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='70'%3E%3Cpath d='M30 4 L56 19 L56 49 L30 64 L4 49 L4 19 Z' fill='none' stroke='rgba(184,137,42,0.08)' stroke-width='1.2'/%3E%3C/svg%3E");
+      background-size:60px 70px;
+    }
+    main{position:relative;z-index:1}
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:18px 40px;
+      background:rgba(253,248,240,0.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-logo{
+      font-family:'Playfair Display',serif;
+      font-size:15px;font-weight:700;letter-spacing:3px;
+      color:var(--gold-dark);text-transform:uppercase;text-decoration:none;
+    }
+    .nav-logo span{display:block;font-size:10px;font-weight:400;letter-spacing:4px;color:var(--text-light);font-family:'Inter',sans-serif}
+    .nav-badge{
+      background:var(--gold);color:#fff;
+      font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+      padding:6px 18px;border-radius:100px;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;gap:0;
+      padding-top:80px;
+    }
+    @media(max-width:768px){.hero{grid-template-columns:1fr;min-height:auto;padding:100px 24px 60px}}
+
+    .hero-left{
+      padding:80px 60px 80px 80px;
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    @media(max-width:768px){.hero-left{padding:40px 24px}}
+
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
+      color:var(--gold);margin-bottom:28px;
+    }
+    .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
+
+    .hero-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(48px,6vw,80px);
+      font-weight:700;line-height:1;
+      letter-spacing:-2px;
+      color:var(--text);margin-bottom:8px;
+    }
+    .hero-subtitle{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(20px,3vw,32px);
+      font-weight:400;font-style:italic;
+      color:var(--gold);margin-bottom:24px;
+    }
+    .hero-quote{
+      font-size:15px;color:var(--text-light);
+      font-style:italic;border-left:3px solid var(--gold-light);
+      padding-left:20px;margin-bottom:40px;line-height:1.8;
+    }
+
+    .stats-row{display:flex;gap:0;margin-bottom:40px}
+    .stat-box{
+      flex:1;padding:20px 24px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.7);
+    }
+    .stat-box:first-child{border-radius:12px 0 0 12px}
+    .stat-box:last-child{border-radius:0 12px 12px 0}
+    .stat-box+.stat-box{border-left:none}
+    .stat-num{
+      font-family:'Playfair Display',serif;
+      font-size:32px;font-weight:700;color:var(--gold);display:block;
+    }
+    .stat-lbl{font-size:11px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase}
+
+    .btn-cta{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--gold);color:#fff;
+      font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+      padding:16px 32px;border-radius:100px;text-decoration:none;
+      box-shadow:0 8px 32px rgba(184,137,42,0.35);
+      transition:transform 0.3s,box-shadow 0.3s;
+    }
+    .btn-cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(184,137,42,0.5)}
+
+    /* HERO RIGHT — photo */
+    .hero-right{
+      position:relative;height:100vh;overflow:hidden;
+      background:linear-gradient(135deg,#f0e4c8,#fdf8f0);
+    }
+    @media(max-width:768px){.hero-right{height:60vw;min-height:340px}}
+    .hero-right img{
+      width:100%;height:100%;object-fit:cover;object-position:center;
+      filter:saturate(1.1) contrast(1.05);
+    }
+    .hero-right::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(to right,var(--cream) 0%,transparent 20%,transparent 80%,var(--cream) 100%);
+    }
+    .jar-badge{
+      position:absolute;bottom:48px;right:48px;z-index:2;
+      background:rgba(255,255,255,0.95);
+      border:2px solid var(--border);
+      border-radius:20px;padding:20px 28px;
+      text-align:center;
+      box-shadow:0 20px 60px rgba(0,0,0,0.1);
+      backdrop-filter:blur(8px);
+    }
+    .jar-badge .jb-pct{
+      font-family:'Playfair Display',serif;
+      font-size:42px;font-weight:700;color:var(--gold);line-height:1;
+    }
+    .jar-badge .jb-txt{font-size:11px;color:var(--text-light);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+    @media(max-width:768px){.jar-badge{bottom:20px;right:20px;padding:14px 20px}.jar-badge .jb-pct{font-size:28px}}
+
+    /* SECTION BASE */
+    .section{padding:100px 24px;max-width:1000px;margin:0 auto}
+    .section-label{
+      display:inline-flex;align-items:center;gap:12px;
+      font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
+      color:var(--gold);margin-bottom:20px;
+    }
+    .section-label::after{content:'';flex:1;width:40px;height:1px;background:var(--gold-light)}
+    h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(30px,4vw,48px);font-weight:700;
+      color:var(--text);margin-bottom:20px;line-height:1.2;
+    }
+    h2 em{color:var(--gold);font-style:italic}
+    .section-intro{font-size:16px;color:var(--text-mid);max-width:640px;margin-bottom:48px}
+
+    /* LABEL SHOWCASE */
+    .label-showcase{
+      background:#fff;border-radius:32px;
+      padding:60px;display:grid;
+      grid-template-columns:280px 1fr;gap:60px;
+      align-items:center;
+      border:1px solid var(--border);
+      box-shadow:0 20px 80px var(--shadow);
+    }
+    @media(max-width:700px){.label-showcase{grid-template-columns:1fr;padding:32px}}
+    .label-jar{
+      width:100%;aspect-ratio:1;border-radius:50%;
+      object-fit:cover;object-position:center 30%;
+      box-shadow:0 20px 60px rgba(184,137,42,0.2);
+      border:4px solid var(--cream2);
+    }
+    .label-info h3{
+      font-family:'Playfair Display',serif;
+      font-size:28px;font-weight:700;color:var(--gold-dark);margin-bottom:8px;
+    }
+    .label-info .li-sub{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);margin-bottom:20px}
+    .label-facts{display:flex;flex-direction:column;gap:12px}
+    .lf-row{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--text-mid)}
+    .lf-row .lf-icon{font-size:18px;width:36px;height:36px;background:var(--cream2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .lf-row strong{color:var(--text);font-weight:600}
+
+    /* COMPOSITION CARDS */
+    .compo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+    .compo-card{
+      background:#fff;border:1px solid var(--border);
+      border-radius:20px;padding:32px 24px;text-align:center;
+      box-shadow:0 4px 20px var(--shadow);
+      transition:transform 0.3s,box-shadow 0.3s;
+    }
+    .compo-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(184,137,42,0.2)}
+    .cc-num{
+      font-family:'Playfair Display',serif;
+      font-size:44px;font-weight:700;color:var(--gold);display:block;line-height:1;margin-bottom:8px;
+    }
+    .cc-lbl{font-size:12px;color:var(--text-light);text-transform:uppercase;letter-spacing:2px}
+    .cc-sub{font-size:13px;color:var(--text-mid);margin-top:6px}
+
+    /* HERITAGE */
+    .heritage-wrap{
+      background:#fff;border-radius:32px;padding:60px;
+      border:1px solid var(--border);
+      box-shadow:0 20px 80px var(--shadow);
+    }
+    @media(max-width:600px){.heritage-wrap{padding:32px 24px}}
+    .story{display:grid;grid-template-columns:56px 1fr;gap:24px;padding:32px 0;border-bottom:1px solid rgba(184,137,42,0.12)}
+    .story:last-child{border-bottom:none;padding-bottom:0}
+    .story:first-child{padding-top:0}
+    .story-icon{
+      width:56px;height:56px;background:var(--cream2);border-radius:14px;
+      display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;
+    }
+    .story h3{
+      font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+      color:var(--gold-dark);margin-bottom:10px;
+    }
+    .story p{font-size:14px;color:var(--text-mid);line-height:1.85}
+
+    /* RARITY PULLQUOTE */
+    .pullquote{
+      text-align:center;padding:60px 40px;
+      background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+      border-radius:32px;color:#fff;margin:0 24px;
+      box-shadow:0 20px 60px rgba(184,137,42,0.35);
+    }
+    .pullquote .pq-bee{font-size:48px;margin-bottom:20px;display:block}
+    .pullquote blockquote{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(18px,2.5vw,26px);font-style:italic;font-weight:400;
+      line-height:1.7;max-width:700px;margin:0 auto 24px;
+    }
+    .pullquote p{font-size:14px;opacity:0.8;letter-spacing:1px}
+
+    /* BENEFITS */
+    .benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    @media(max-width:640px){.benefits-grid{grid-template-columns:1fr}}
+    .benefit-panel{border-radius:28px;padding:40px 36px;border:1px solid}
+    .benefit-panel.women{
+      background:linear-gradient(145deg,#fdf0ff,#fff5f0);
+      border-color:rgba(180,100,200,0.2);
+    }
+    .benefit-panel.men{
+      background:linear-gradient(145deg,#fffbf0,#fff8e8);
+      border-color:var(--border);
+    }
+    .bp-header{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+    .bp-icon{font-size:32px}
+    .bp-header h3{
+      font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+    }
+    .benefit-panel.women .bp-header h3{color:#9040a8}
+    .benefit-panel.men .bp-header h3{color:var(--gold-dark)}
+    .bp-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-light);margin-bottom:20px;display:block}
+    .bp-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+    .bp-list li{font-size:14px;color:var(--text-mid);padding-left:16px;position:relative;line-height:1.75}
+    .bp-list li::before{content:'◆';position:absolute;left:0;top:5px;font-size:8px}
+    .benefit-panel.women .bp-list li::before{color:#c060d8}
+    .benefit-panel.men .bp-list li::before{color:var(--gold)}
+    .bp-list li strong{display:block;font-weight:600;color:var(--text);font-size:13px;margin-bottom:3px}
+
+    /* FOOTER */
+    footer{
+      text-align:center;padding:80px 24px 60px;
+      border-top:1px solid var(--border);margin-top:60px;
+    }
+    .footer-bee{font-size:40px;display:block;margin-bottom:16px}
+    .footer-brand{
+      font-family:'Playfair Display',serif;
+      font-size:28px;font-weight:700;letter-spacing:2px;color:var(--gold-dark);
+    }
+    .footer-sub{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--text-light);margin-top:8px}
+    .footer-line{width:60px;height:2px;background:var(--gold-light);margin:24px auto}
+    .footer-note{font-size:13px;color:var(--text-light)}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
+    .reveal.on{opacity:1;transform:none}
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--cream)}
+    ::-webkit-scrollbar-thumb{background:var(--gold-light);border-radius:3px}
+  </style>
+</head>
+<body>
+
+<div class="hc-pattern"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    Royal Jelly 27
+    <span>Mauro &amp; Co 3 · Morocco</span>
+  </a>
+
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left reveal">
+      <span class="hero-eyebrow">Mauro &amp; Co 3</span>
+      <h1 class="hero-title">Royal Jelly<br/>27</h1>
+      <p class="hero-subtitle">L'Élixir</p>
+      <p class="hero-quote">« Quand L'Élixir des anciennes civilisations refait surface »</p>
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="stat-num">22%</span>
+          <span class="stat-lbl">Concentration</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">229g</span>
+          <span class="stat-lbl">Poids net</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">50g</span>
+          <span class="stat-lbl">Gelée Royale</span>
+        </div>
+      </div>
+      <a href="#product" class="btn-cta">🍯 Découvrir l'Élixir</a>
+    </div>
+    <div class="hero-right">
+      <img src="royal-jelly-photo.jpg" alt="Royal Jelly 27 — Mauro & Co 3, 229g, Product of Morocco"/>
+
+    </div>
+  </div>
+
+  <!-- LABEL SHOWCASE -->
+  <section class="section reveal" id="product">
+    <span class="section-label">🏺 Le Produit</span>
+    <h2>Un Standard <em>Inégalé</em></h2>
+    <p class="section-intro">La plupart des préparations du marché ne contiennent que 2 à 3% de Gelée Royale. Royal Jelly 27 rompt avec les standards.</p>
+    <div class="label-showcase">
+      <img src="royal-jelly-mockup.png" alt="Royal Jelly 27 jar" class="label-jar" onerror="this.src='royal-jelly-photo.jpg';this.style.objectPosition='center 20%'"/>
+      <div class="label-info">
+        <h3>Royal Jelly 27</h3>
+        <p class="li-sub">Par Mauro &amp; Co 3 · Product of Morocco</p>
+        <div class="label-facts">
+          <div class="lf-row"><span class="lf-icon">🍯</span><span><strong>50g</strong> de Gelée Royale fraîche pure</span></div>
+          <div class="lf-row"><span class="lf-icon">🌿</span><span><strong>179g</strong> de Miel pur sélectionné</span></div>
+          <div class="lf-row"><span class="lf-icon">⚖️</span><span><strong>229g</strong> poids total du pot</span></div>
+          <div class="lf-row"><span class="lf-icon">✨</span><span><strong>22%</strong> de concentration — contre 2-3% sur le marché</span></div>
+          <div class="lf-row"><span class="lf-icon">🇲🇦</span><span><strong>Product of Morocco</strong> — artisanal &amp; sélectionné</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPOSITION -->
+  <section class="section reveal">
+    <span class="section-label">🍯 L'Essence</span>
+    <h2>Une <em>Concentration</em> Rare</h2>
+    <div class="compo-grid">
+      <div class="compo-card">
+        <span class="cc-num">50g</span>
+        <p class="cc-lbl">Gelée Royale</p>
+        <p class="cc-sub">Fraîche et pure</p>
+      </div>
+      <div class="compo-card">
+        <span class="cc-num">179g</span>
+        <p class="cc-lbl">Miel Pur</p>
+        <p class="cc-sub">Soigneusement sélectionné</p>
+      </div>
+      <div class="compo-card">
+        <span class="cc-num">229g</span>
+        <p class="cc-lbl">Poids Total</p>
+        <p class="cc-sub">Par pot</p>
+      </div>
+      <div class="compo-card">
+        <span class="cc-num">22%</span>
+        <p class="cc-lbl">Concentration</p>
+        <p class="cc-sub">7× la moyenne du marché</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERITAGE -->
+  <section class="section reveal">
+    <span class="section-label">🏺 Héritage Millénaire</span>
+    <h2>Le Secret des <em>Grands Destins</em></h2>
+    <p class="section-intro">Au-delà des simples légendes, la Gelée Royale a été le catalyseur des plus grands destins de l'Histoire.</p>
+    <div class="heritage-wrap">
+      <div class="story">
+        <div class="story-icon">📜</div>
+        <div>
+          <h3>Le Secret d'Aristote</h3>
+          <p>Le célèbre philosophe et précepteur d'Alexandre le Grand fut l'un des premiers à étudier la « substance pâle » de la ruche. Il affirmait qu'elle augmentait la force intellectuelle et la capacité de vision. C'est grâce à cette « nourriture de l'esprit » qu'Alexandre aurait maintenu sa vigueur légendaire lors de ses conquêtes mondiales.</p>
+        </div>
+      </div>
+      <div class="story">
+        <div class="story-icon">⛪</div>
+        <div>
+          <h3>La Diète du Pape Pie XII</h3>
+          <p>En 1954, alors que le souverain pontife était mourant et incapable de récupérer, son médecin lui prescrivit une cure intensive de gelée royale. Sa guérison « miraculeuse » fit la une de la presse mondiale, révélant au grand public ce que les hautes sphères du Vatican utilisaient déjà en secret.</p>
+        </div>
+      </div>
+      <div class="story">
+        <div class="story-icon">⚔️</div>
+        <div>
+          <h3>L'Élixir des Samouraïs</h3>
+          <p>Dans le Japon médiéval, certains guerriers d'élite consommaient un mélange de miel sauvage et de gelée royale avant les batailles. Ils l'appelaient « l'énergie du centre » — rester calme sous la pression tout en ayant une réactivité physique foudroyante.</p>
+        </div>
+      </div>
+      <div class="story">
+        <div class="story-icon">🏛️</div>
+        <div>
+          <h3>La Tradition d'Artémis</h3>
+          <p>À Éphèse, les grandes prêtresses de la déesse Artémis — représentée par une abeille — étaient appelées les « Mélisses ». Elles utilisaient la gelée royale dans des rituels de régénération pour incarner la beauté éternelle et l'autorité spirituelle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULLQUOTE -->
+  <div class="pullquote reveal">
+    <span class="pq-bee">🐝</span>
+    <blockquote>
+      « Dans une ruche de 60 000 abeilles, seule une infime quantité de gelée royale est produite chaque année. C'est la substance la plus rare de la biosphère. »
+    </blockquote>
+    <p>Ce n'est pas un complément alimentaire — c'est une passation de pouvoir de la nature vers l'homme.</p>
+  </div>
+
+  <!-- BENEFITS -->
+  <section class="section reveal">
+    <span class="section-label">✨ Les Bienfaits</span>
+    <h2>Un <em>Équilibre Global</em></h2>
+    <div class="benefits-grid">
+      <div class="benefit-panel women">
+        <div class="bp-header"><span class="bp-icon">🌸</span><h3>Pour les Femmes</h3></div>
+        <span class="bp-tag">Éclat &amp; Harmonie</span>
+        <ul class="bp-list">
+          <li><strong>Équilibre Naturel</strong>Aide à réguler le système hormonal et soutient le corps lors des cycles.</li>
+          <li><strong>Soin de l'Intérieur</strong>Sa richesse en acides aminés booste naturellement le collagène pour une peau lumineuse et des cheveux renforcés.</li>
+          <li><strong>Vibration Lunaire</strong>Résonne avec les cycles de la nature pour un bien-être profond.</li>
+        </ul>
+      </div>
+      <div class="benefit-panel men">
+        <div class="bp-header"><span class="bp-icon">⚡</span><h3>Pour les Hommes</h3></div>
+        <span class="bp-tag">Force &amp; Vitalité</span>
+        <ul class="bp-list">
+          <li><strong>Performance</strong>Un allié puissant pour combattre la fatigue physique et stimuler la vigueur naturelle.</li>
+          <li><strong>Mental de Bâtisseur</strong>Améliore la concentration et la résistance au stress.</li>
+          <li><strong>Vigueur</strong>Soutient les fonctions vitales et l'endurance globale.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="reveal">
+    <span class="footer-bee">🐝</span>
+    <p class="footer-brand">Mauro &amp; Co 3</p>
+    <p class="footer-sub">La Nature au service de votre excellence</p>
+    <div class="footer-line"></div>
+    <p class="footer-note">Royal Jelly 27 · 229g · Product of Morocco</p>
+  </footer>
+
+</main>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on') });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
