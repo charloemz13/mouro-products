@@ -292,6 +292,50 @@
     .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
     .reveal.on{opacity:1;transform:none}
 
+    /* WHATSAPP FLOATING */
+    .wa-float{
+      position:fixed;bottom:28px;right:28px;z-index:999;
+      display:flex;align-items:center;gap:12px;
+      background:#25D366;color:#fff;
+      padding:14px 22px 14px 18px;
+      border-radius:100px;
+      box-shadow:0 8px 32px rgba(37,211,102,0.45);
+      text-decoration:none;
+      font-size:14px;font-weight:600;letter-spacing:0.5px;
+      transition:transform 0.3s,box-shadow 0.3s;
+      animation:wa-pulse 2.5s ease-in-out infinite;
+    }
+    .wa-float:hover{
+      transform:translateY(-3px) scale(1.04);
+      box-shadow:0 16px 48px rgba(37,211,102,0.55);
+      animation:none;
+    }
+    .wa-float svg{width:26px;height:26px;flex-shrink:0}
+    @media(max-width:480px){
+      .wa-float{bottom:20px;right:16px;padding:13px 18px 13px 14px;font-size:13px}
+      .wa-float .wa-label{display:none}
+      .wa-float{border-radius:50%;padding:16px;gap:0}
+      .wa-float svg{width:28px;height:28px}
+    }
+    @keyframes wa-pulse{
+      0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.45)}
+      50%{box-shadow:0 8px 48px rgba(37,211,102,0.75),0 0 0 10px rgba(37,211,102,0.08)}
+    }
+
+    /* WHATSAPP INLINE BUTTON */
+    .btn-whatsapp{
+      display:inline-flex;align-items:center;gap:10px;
+      background:linear-gradient(135deg,#25D366,#1aab52);
+      color:#fff;
+      font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+      padding:16px 28px;border-radius:100px;text-decoration:none;
+      box-shadow:0 8px 28px rgba(37,211,102,0.35);
+      transition:transform 0.3s,box-shadow 0.3s;
+      margin-top:20px;width:fit-content;
+    }
+    .btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,0.5)}
+    .btn-whatsapp svg{width:20px;height:20px;flex-shrink:0}
+
     /* SCROLLBAR */
     ::-webkit-scrollbar{width:5px}
     ::-webkit-scrollbar-track{background:var(--cream)}
@@ -317,7 +361,7 @@
   <div class="hero">
     <div class="hero-left reveal">
       <span class="hero-eyebrow">Mauro &amp; Co 3</span>
-      <h1 class="hero-title">Royal Jelly<br/>27</h1>
+      <h1 class="hero-title">Royal Jelly 27</h1>
       <p class="hero-subtitle">L'Élixir</p>
       <p class="hero-quote">« Quand L'Élixir des anciennes civilisations refait surface »</p>
       <div class="stats-row">
@@ -348,7 +392,7 @@
     <h2>Un Standard <em>Inégalé</em></h2>
     <p class="section-intro">La plupart des préparations du marché ne contiennent que 2 à 3% de Gelée Royale. Royal Jelly 27 rompt avec les standards.</p>
     <div class="label-showcase">
-      <img src="royal-jelly-mockup.png" alt="Royal Jelly 27 jar" class="label-jar" onerror="this.src='royal-jelly-photo.jpg';this.style.objectPosition='center 20%'"/>
+      <img src="royal-jelly-photo.jpg" alt="Royal Jelly 27 — Mauro &amp; Co 3, Product of Morocco" class="label-jar" style="object-position:center 30%;"/>
       <div class="label-info">
         <h3>Royal Jelly 27</h3>
         <p class="li-sub">Par Mauro &amp; Co 3 · Product of Morocco</p>
@@ -359,34 +403,38 @@
           <div class="lf-row"><span class="lf-icon">✨</span><span><strong>22%</strong> de concentration — contre 2-3% sur le marché</span></div>
           <div class="lf-row"><span class="lf-icon">🇲🇦</span><span><strong>Product of Morocco</strong> — artisanal &amp; sélectionné</span></div>
         </div>
+        <a href="https://wa.me/212664085328?text=Bonjour%2C%20je%20souhaite%20commander%20Royal%20Jelly%2027%20(229g%2C%2022%25%20Gel%C3%A9e%20Royale).%20Merci%20!" target="_blank" rel="noopener" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Commander sur WhatsApp
+        </a>
       </div>
     </div>
   </section>
 
   <!-- COMPOSITION -->
   <section class="section reveal">
-    <span class="section-label">🍯 L'Essence</span>
-    <h2>Une <em>Concentration</em> Rare</h2>
+    <span class="section-label">🔬 Science</span>
+    <h2>Ce que contient <em>la Gelée Royale</em></h2>
     <div class="compo-grid">
       <div class="compo-card">
-        <span class="cc-num">50g</span>
-        <p class="cc-lbl">Gelée Royale</p>
-        <p class="cc-sub">Fraîche et pure</p>
+        <span class="cc-num">18</span>
+        <p class="cc-lbl">Acides Aminés</p>
+        <p class="cc-sub">Dont tous les essentiels</p>
       </div>
       <div class="compo-card">
-        <span class="cc-num">179g</span>
-        <p class="cc-lbl">Miel Pur</p>
-        <p class="cc-sub">Soigneusement sélectionné</p>
+        <span class="cc-num">10-HDA</span>
+        <p class="cc-lbl">Acide Gras Unique</p>
+        <p class="cc-sub">Exclusif à la gelée royale</p>
       </div>
       <div class="compo-card">
-        <span class="cc-num">229g</span>
-        <p class="cc-lbl">Poids Total</p>
-        <p class="cc-sub">Par pot</p>
+        <span class="cc-num">B1–B6</span>
+        <p class="cc-lbl">Vitamines B</p>
+        <p class="cc-sub">Complexe complet naturel</p>
       </div>
       <div class="compo-card">
-        <span class="cc-num">22%</span>
-        <p class="cc-lbl">Concentration</p>
-        <p class="cc-sub">7× la moyenne du marché</p>
+        <span class="cc-num">~3,5g</span>
+        <p class="cc-lbl">Protéines / 100g</p>
+        <p class="cc-sub">Dont royalactine & MRJPs</p>
       </div>
     </div>
   </section>
@@ -430,11 +478,16 @@
 
   <!-- PULLQUOTE -->
   <div class="pullquote reveal">
-    <span class="pq-bee">🐝</span>
+    <img src="bee-infographic.png" alt="Comparaison Abeille Ouvrière vs Reine" style="width:100%;max-width:700px;border-radius:16px;margin-bottom:28px;box-shadow:0 12px 40px rgba(0,0,0,0.2);"/>
     <blockquote>
-      « Dans une ruche de 60 000 abeilles, seule une infime quantité de gelée royale est produite chaque année. C'est la substance la plus rare de la biosphère. »
+      Une abeille ouvrière vit généralement <strong>45 jours</strong>. Une reine peut vivre jusqu'à <strong>7 ans</strong> (60 fois plus longtemps) et atteint une taille deux fois plus grande.
+      <br/><br/>
+      Leur ADN est <strong>IDENTIQUE</strong>. Leur alimentation est différente.
+      <br/><br/>
+      Les abeilles ouvrières sont nourries de miel et de pollen.<br/>
+      Les reines sont nourries exclusivement de <strong>gelée royale</strong>.
     </blockquote>
-    <p>Ce n'est pas un complément alimentaire — c'est une passation de pouvoir de la nature vers l'homme.</p>
+    <p><em>Ce n'est pas un complément alimentaire — c'est une passation de pouvoir de la nature vers l'homme.</em></p>
   </div>
 
   <!-- BENEFITS -->
@@ -473,6 +526,12 @@
   </footer>
 
 </main>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/212664085328?text=Bonjour%2C%20je%20souhaite%20commander%20Royal%20Jelly%2027%20(229g%2C%2022%25%20Gel%C3%A9e%20Royale).%20Merci%20!" target="_blank" rel="noopener" class="wa-float" aria-label="Commander sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-label">Commander sur WhatsApp</span>
+</a>
 
 <script>
   const obs = new IntersectionObserver(entries => {
